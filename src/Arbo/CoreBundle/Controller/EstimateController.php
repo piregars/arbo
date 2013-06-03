@@ -8,7 +8,7 @@ class EstimateController extends Controller
 {
     public function sendAction()
     {
-        $estimate = null;
+        $estimate = $this->get('arbo_core.estimate_manager')->getOneBy(['a.id' => $this->getRequest()->attributes->get('id')]);
 
         $rendered = $this->renderView('ArboCoreBundle:Estimate:email.html.twig', ['estimate' => $estimate]);
         $message = \Swift_Message::newInstance()

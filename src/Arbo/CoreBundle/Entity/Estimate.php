@@ -4,11 +4,15 @@ namespace Arbo\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Msi\CmfBundle\Doctrine\Extension\Timestampable\TimestampableInterface;
+
 /**
  * @ORM\Entity
  */
-class Estimate
+class Estimate implements TimestampableInterface
 {
+    use \Msi\CmfBundle\Doctrine\Extension\Timestampable\Traits\TimestampableEntity;
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
