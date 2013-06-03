@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new Acme\UserBundle\AcmeUserBundle(),
             new Acme\DemoBundle\AcmeDemoBundle(),
             new Acme\AppBundle\AcmeAppBundle(),
+            new Arbo\CoreBundle\ArboCoreBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

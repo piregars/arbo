@@ -1,0 +1,16 @@
+parameters:
+#    arbo_core.example.class: Arbo\CoreBundle\Example
+
+services:
+    # Estimate
+    arbo_core_estimate_admin:
+        class: Arbo\CoreBundle\Admin\EstimateAdmin
+        arguments: [ @arbo_core.estimate_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+
+    arbo_core.estimate_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Arbo\CoreBundle\Entity\Estimate ]
+        parent: msi_cmf.manager
