@@ -1,0 +1,16 @@
+parameters:
+#    acme_demo.example.class: Acme\DemoBundle\Example
+
+services:
+    # News
+    acme_demo_news_admin:
+        class: Acme\DemoBundle\Admin\NewsAdmin
+        arguments: [ @acme_demo.news_manager ]
+        parent: msi_cmf.admin
+        tags:
+            - { name: msi.admin }
+
+    acme_demo.news_manager:
+        class: %msi_cmf.manager.class%
+        arguments: [ Acme\DemoBundle\Entity\News ]
+        parent: msi_cmf.manager
