@@ -1,3 +1,3 @@
-arbo_core_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ArboCoreBundle:Default:index }
+arbo_core_estimate_send:
+    pattern:  /estimate/{id}/send
+    defaults: { _controller: ArboCoreBundle:Estimate:send }

@@ -12,7 +12,11 @@ class EstimateAdmin extends Admin
     {
         $builder
             // ->add('name')
-            ->add('', 'action')
+            ->add('', 'action', [
+                'actions' => [
+                    '<i class="icon-envelope"></i> Envoyer' => 'arbo_core_estimate_send',
+                ],
+            ])
         ;
     }
 
